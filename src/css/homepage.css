@@ -1,0 +1,159 @@
+.hero-section {
+    width: 80%;
+  
+    margin: auto;
+  
+    margin-top: 13%;
+  
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 60px;
+  
+    font-weight: bold;
+  }
+  
+  .hero-section p {
+    margin-top: 20px;
+  
+    color: gray;
+  
+    font-size: 18px;
+  }
+  
+  .search-container {
+    /* margin-top: 40px; */
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    gap: 15px;
+  }
+  
+  .search-container input {
+    width: 250px;
+  
+    padding: 15px;
+  
+    border-radius: 12px;
+  
+    border: 1px solid #dcdcdc;
+  
+    font-size: 16px;
+  }
+  
+  .search-container button {
+    padding: 15px 22px;
+  
+    border: none;
+  
+    border-radius: 12px;
+  
+    background-color: black;
+  
+    color: white;
+  
+    font-size: 15px;
+  }
+  
+  .budget-section {
+    margin-top: 45px;
+  }
+  
+  .budget-section p {
+    margin-bottom: 10px;
+  
+    font-size: 18px;
+  }
+  
+  .budget-section input {
+    width: 400px;
+  }
+  
+  .categories-container {
+    margin-top: 50px;
+  
+    display: flex;
+  
+    flex-wrap: wrap;
+  
+    justify-content: center;
+  
+    gap: 15px;
+  }
+  
+  .pill {
+    padding: 12px 22px;
+  
+    border-radius: 30px;
+  
+    border: none;
+  
+    background-color: #e5e5e5;
+  
+    transition: 0.2s;
+  
+    font-size: 15px;
+  }
+  
+  .pill:hover {
+    transform: scale(1.05);
+  }
+  
+  .active-pill {
+    background-color: black;
+  
+    color: white;
+  }
+  
+  .generate-btn {
+    margin-top: 60px;
+  
+    padding: 18px 30px;
+  
+    border: none;
+  
+    border-radius: 12px;
+  
+    background-color: black;
+  
+    color: white;
+  
+    font-size: 17px;
+  
+    transition: 0.2s;
+  }
+  
+  .generate-btn:hover {
+    transform: scale(1.03);
+  }
+
+  .search-row {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .more-pill {
+    padding: 12px 22px;
+  
+    border-radius: 30px;
+  
+    border: none;
+  
+    background-color: #dcdcdc;
+  
+    font-size: 15px;
+  
+    cursor: pointer;
+  
+    transition: 0.2s;
+  }
+  
+  .more-pill:hover {
+    transform: scale(1.05);
+  }
