@@ -39,6 +39,7 @@
   align-items: center;
   gap: 12px;
   padding: 18px 20px;
+  flex-wrap: wrap;
 }
 
 /* ── Budget panel ── */
@@ -51,9 +52,8 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #a8a49c;
-  margin-bottom: 16px;
   color: #7a7570;
+  margin-bottom: 16px;
 }
 
 .budget-section input[type='range'] {
@@ -144,4 +144,58 @@
   font-size: 12px;
   font-weight: 500;
   padding-left: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 36px 16px 48px;
+  }
+
+  .hero-section > h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+  }
+
+  .hero-section > p {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .search-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .budget-section {
+    padding: 18px 16px;
+  }
+
+  .categories-container {
+    padding: 14px 16px;
+    gap: 8px;
+  }
+
+  .pill,
+  .more-pill {
+    font-size: 12px;
+    padding: 7px 14px;
+  }
+
+  .generate-btn {
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero-section {
+    padding: 48px 24px 64px;
+  }
+
+  .hero-section > h1 {
+    font-size: 48px;
+  }
 }

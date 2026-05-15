@@ -194,16 +194,65 @@
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .itinerary-page {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
   .itinerary-main {
     padding: 12px;
+    overflow: visible;
+    flex: none;
+  }
+
+  .itinerary-left {
+    overflow: visible;
+    border-radius: 16px;
   }
 
   .itinerary-header {
-    padding: 18px 20px 14px;
+    padding: 16px 16px 14px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .itinerary-title {
+    font-size: 18px;
+  }
+
+  .itinerary-total {
+    font-size: 12px;
   }
 
   .itinerary-scroll {
-    padding: 16px 20px 20px;
+    padding: 14px 14px 18px;
+    overflow: visible;
+    gap: 8px;
+  }
+
+  .itinerary-card {
+    padding: 14px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .itinerary-card-title {
+    font-size: 14px;
+  }
+
+  .itinerary-card-top {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .itinerary-card-meta {
+    gap: 10px;
+  }
+
+  .itinerary-card-budget,
+  .itinerary-card-rating {
+    font-size: 12px;
   }
 }

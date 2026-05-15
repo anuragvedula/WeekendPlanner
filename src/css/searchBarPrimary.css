@@ -1,6 +1,7 @@
 .searchbar-primary {
   position: relative;
   flex: 1;
+  min-width: 0;
 }
 
 .searchbar-primary input {
@@ -49,4 +50,12 @@
 
 .dropdown-item:hover {
   background: #faf8f5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .searchbar-primary input {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
 }

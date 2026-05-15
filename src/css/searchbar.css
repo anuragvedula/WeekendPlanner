@@ -3,6 +3,7 @@
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .city-dropdown {
@@ -51,4 +52,23 @@
   border-color: #1c1916;
   color: #1c1916;
   background: #faf8f5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .search-container {
+    width: 100%;
+  }
+
+  .city-dropdown {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    padding: 10px 36px 10px 14px;
+  }
+
+  .location-btn {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
 }

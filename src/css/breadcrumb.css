@@ -86,3 +86,20 @@
   user-select: none;
   flex-shrink: 0;
 }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .step-breadcrumb {
+    padding: 0 16px;
+  }
+
+  .step-chip {
+    font-size: 11px;
+    padding: 5px 10px;
+    max-width: 160px;
+  }
+
+  .step-sublabel {
+    display: none;
+  }
+}

@@ -293,7 +293,7 @@
   color: #1c1916;
 }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE: tablet ── */
 @media (max-width: 1000px) {
   .resources-flow-page {
     height: auto;
@@ -325,16 +325,71 @@
   }
 }
 
-@media (max-width: 600px) {
+/* ── RESPONSIVE: mobile ── */
+@media (max-width: 640px) {
+  .flow-main {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .flow-left {
+    min-height: 0;
+    border-radius: 16px;
+  }
+
+  .flow-header {
+    padding: 18px 18px 0;
+  }
+
   .flow-heading {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .flow-context-text {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .cards-scroll-area {
+    padding: 14px 14px 18px;
   }
 
   .cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .flow-right {
+    gap: 8px;
+  }
+
+  .flow-map-wrap {
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  /* plan complete */
+  .plan-complete {
+    padding: 24px 12px 40px;
   }
 
   .plan-complete-card {
-    padding: 32px 20px;
+    padding: 28px 18px 24px;
+    border-radius: 18px;
+  }
+
+  .plan-complete-title {
+    font-size: 20px;
+  }
+
+  .plan-complete-sub {
+    margin-bottom: 20px;
+  }
+}
+
+/* very small screens: single column cards */
+@media (max-width: 380px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
   }
 }
