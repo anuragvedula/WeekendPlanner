@@ -1,73 +1,54 @@
 .search-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .city-dropdown {
-  width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
 
-  padding: 15px;
-  padding-right: 40px;
-
-  border: 1px solid #dcdcdc;
-  border-radius: 12px;
-
-  background: white;
-
-  font-size: 15px;
+.city-dropdown {
+  padding: 9px 36px 9px 14px;
+  border: 1px solid #e5e1d8;
+  border-radius: 10px;
+  background: #faf8f5;
+  font-size: 13px;
   font-weight: 500;
-
+  color: #1c1916;
   cursor: pointer;
   outline: none;
-
-  transition: all 0.2s ease;
-
+  transition: border-color 0.18s, background 0.18s;
   appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%231c1916' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
-
-  /* Move icon left here */
-  background-position: right 14px center;
-
-  background-size: 14px;
+  background-position: right 11px center;
+  background-size: 13px;
+  background-color: #faf8f5;
 }
-    
-  
-  
-  .city-dropdown:hover {
-    border-color: #999;
-  }
-  
-  .city-dropdown:focus {
-    border-color: black;
-  
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
-  }
-  
-  .location-btn {
-    padding: 14px 18px;
-  
-    border: none;
-    border-radius: 12px;
-  
-    background: black;
-    color: white;
-  
-    font-size: 14px;
-    font-weight: 600;
-  
-    cursor: pointer;
-  
-    transition: all 0.2s ease;
-  }
-  
-  .location-btn:hover {
-    transform: translateY(-1px);
-  
-    opacity: 0.92;
-  }
+
+.city-dropdown:hover {
+  border-color: #cfc9bf;
+}
+
+.city-dropdown:focus {
+  border-color: #1c1916;
+  background-color: #ffffff;
+}
+
+.location-btn {
+  padding: 9px 14px;
+  border: 1px solid #e5e1d8;
+  border-radius: 10px;
+  background: transparent;
+  color: #7a7570;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+
+.location-btn:hover {
+  border-color: #1c1916;
+  color: #1c1916;
+  background: #faf8f5;
+}

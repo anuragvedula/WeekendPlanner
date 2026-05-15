@@ -4,9 +4,10 @@ import CategoryPill from "../components/CategoryPill";
 
 import "../css/homepage.css";
 
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { categoryAtom } from "../store/atoms/categoryAtom";
 import { budgetAtom } from "../store/atoms/budgetAtom";
+import { cityAtom } from "../store/atoms/cityAtom";
 import SearchBarPrimary from "../components/SearchBarPrimary";
 
 import { useNavigate } from "react-router-dom";
@@ -21,7 +22,10 @@ function Homepage() {
 
   const [budget, setBudget] = useRecoilState(budgetAtom);
 
+  const city = useRecoilValue(cityAtom);
+
   const [showMore, setShowMore] = useState(false);
+  const [showErrors, setShowErrors] = useState(false);
 
   const categories = [
     "Movies",
@@ -71,6 +75,10 @@ function Homepage() {
           <SearchBar />
         </div>
 
+        {showErrors && !city && (
+          <p className="validation-error">Please select or detect your city.</p>
+        )}
+
         <div className="budget-section">
           <p>Budget: ₹ {budget}</p>
 
@@ -115,7 +123,20 @@ function Homepage() {
           )}
         </div>
 
-        <button className="generate-btn" onClick={() => navigate("/resources")}>
+        {showErrors && selectedCategories.length === 0 && (
+          <p className="validation-error">Please select at least one interest.</p>
+        )}
+
+        <button
+          className="generate-btn"
+          onClick={() => {
+            if (!city || selectedCategories.length === 0) {
+              setShowErrors(true);
+              return;
+            }
+            navigate("/resources");
+          }}
+        >
           Generate My Weekend
         </button>
       </div>

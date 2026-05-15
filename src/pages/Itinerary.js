@@ -1,69 +1,68 @@
-import Navbar from "../components/Navbar";
-
 import { useRecoilState } from "recoil";
 
+import Navbar from "../components/Navbar";
 import { itineraryAtom } from "../store/atoms/itineraryAtom";
 
+import "../css/itinerary.css";
+
 function Itinerary() {
-  const [itinerary, setItinerary] =
-    useRecoilState(itineraryAtom);
+  const [itinerary, setItinerary] = useRecoilState(itineraryAtom);
 
   function removeFromItinerary(id) {
-    const updatedItinerary = itinerary.filter(
-      (item) => item.id !== id
-    );
-
-    setItinerary(updatedItinerary);
+    setItinerary(itinerary.filter((item) => item.id !== id));
   }
 
+  const totalBudget = itinerary.reduce((sum, item) => sum + item.budget, 0);
+
   return (
-    <div>
+    <div className="itinerary-page">
       <Navbar />
 
-      <div style={{ padding: "30px" }}>
-        <h1>Your Weekend Itinerary</h1>
+      <div className="itinerary-main">
+        <div className="itinerary-left">
+          <div className="itinerary-header">
+            <h1 className="itinerary-title">Your Weekend Itinerary</h1>
+            {itinerary.length > 0 && (
+              <p className="itinerary-total">Total ₹ {totalBudget.toLocaleString()}</p>
+            )}
+          </div>
 
-        {itinerary.length === 0 ? (
-          <p>No activities added yet.</p>
-        ) : (
-          itinerary.map((item) => (
-            <div
-              key={item.id}
-              style={{
-                border: "1px solid #ddd",
-                padding: "20px",
-                marginTop: "20px",
-                borderRadius: "10px",
-                background: "white",
-              }}
-            >
-              <h3>{item.title}</h3>
-
-              <p>{item.category}</p>
-
-              <p>₹ {item.budget}</p>
-
-              <p>⭐ {item.rating}</p>
-
-              <p>{item.location}</p>
-
-              <button
-                onClick={() =>
-                  removeFromItinerary(item.id)
-                }
-                style={{
-                  marginTop: "10px",
-                  padding: "10px 16px",
-                  border: "none",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                }}
-              >
-                Remove From Itinerary
-              </button>
+          {itinerary.length === 0 ? (
+            <div className="itinerary-empty">
+              <p>No activities planned yet.</p>
             </div>
-          ))
-        )}
+          ) : (
+            <div className="itinerary-scroll">
+              {itinerary.map((item, index) => (
+                <div key={item.id} className="itinerary-card">
+                  <div className="itinerary-card-num">{index + 1}</div>
+
+                  <div className="itinerary-card-body">
+                    <div className="itinerary-card-top">
+                      <div>
+                        <p className="itinerary-card-category">{item.category}</p>
+                        <h3 className="itinerary-card-title">{item.title}</h3>
+                        <p className="itinerary-card-location">📍 {item.location}</p>
+                      </div>
+                      <button
+                        className="itinerary-remove-btn"
+                        onClick={() => removeFromItinerary(item.id)}
+                        title="Remove"
+                      >
+                        ✕
+                      </button>
+                    </div>
+
+                    <div className="itinerary-card-meta">
+                      <span className="itinerary-card-budget">₹ {item.budget.toLocaleString()}</span>
+                      <span className="itinerary-card-rating">⭐ {item.rating}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

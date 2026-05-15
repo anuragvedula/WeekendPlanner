@@ -1,19 +1,52 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #f5f5f5;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  button {
-    cursor: pointer;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg:        #f4f1ec;
+  --panel:     #ffffff;
+  --panel-alt: #faf8f5;
+  --border:    #e5e1d8;
+  --border-2:  #cfc9bf;
+  --ink:       #1c1916;
+  --ink-2:     #7a7570;
+  --ink-3:     #b0aba3;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+input[type='range'] {
+  accent-color: var(--ink);
+}
